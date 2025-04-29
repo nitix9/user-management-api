@@ -8,7 +8,7 @@ use Apiato\Core\Exceptions\InvalidTransformerException;
 use App\Containers\UserSection\User\Actions\CreateUserAction;
 use App\Containers\UserSection\User\Actions\DeleteUserAction;
 use App\Containers\UserSection\User\Actions\FindUserByIdAction;
-use App\Containers\UserSection\User\Actions\ListUsersAction;
+use App\Containers\UserSection\User\Actions\GetAllUsersAction;
 use App\Containers\UserSection\User\Actions\UpdateUserAction;
 use App\Containers\UserSection\User\UI\API\Requests\CreateUserRequest;
 use App\Containers\UserSection\User\UI\API\Requests\DeleteUserRequest;
@@ -24,7 +24,7 @@ use App\Ship\Parents\Controllers\ApiController;
 use Illuminate\Http\JsonResponse;
 use Prettus\Repository\Exceptions\RepositoryException;
 
-class Controller extends ApiController
+class UserController extends ApiController
 {
     /**
      * @throws InvalidTransformerException
@@ -54,7 +54,7 @@ class Controller extends ApiController
      * @throws CoreInternalErrorException
      * @throws RepositoryException
      */
-    public function list(ListUsersRequest $request, ListUsersAction $action): array
+    public function list(ListUsersRequest $request, GetAllUsersAction $action): array
     {
       $users = $action->run($request);
 

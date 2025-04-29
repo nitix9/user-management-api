@@ -22,9 +22,9 @@
  * }
  */
 
-use App\Containers\UserSection\User\UI\API\Controllers\Controller;
+use App\Containers\UserSection\User\UI\API\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::patch('users/{id}', [Controller::class, 'update'])
+Route::patch('users/{id}', [UserController::class, 'update'])
     ->middleware(['auth:api']);
 

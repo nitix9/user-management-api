@@ -3,15 +3,15 @@
 namespace App\Containers\UserSection\User\Actions;
 
 use Apiato\Core\Exceptions\CoreInternalErrorException;
-use App\Containers\UserSection\User\Tasks\ListUsersTask;
+use App\Containers\UserSection\User\Tasks\GetAllUsersTask;
 use App\Containers\UserSection\User\UI\API\Requests\ListUsersRequest;
 use App\Ship\Parents\Actions\Action as ParentAction;
 use Prettus\Repository\Exceptions\RepositoryException;
 
-class ListUsersAction extends ParentAction
+class GetAllUsersAction extends ParentAction
 {
     public function __construct(
-        private readonly ListUsersTask $listUsersTask,
+        private readonly GetAllUsersTask $listUsersTask,
     ) {
     }
 

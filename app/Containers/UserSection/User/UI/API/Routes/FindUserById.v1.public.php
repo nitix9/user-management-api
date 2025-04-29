@@ -22,9 +22,9 @@
  * }
  */
 
-use App\Containers\UserSection\User\UI\API\Controllers\Controller;
+use App\Containers\UserSection\User\UI\API\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('users/{id}', [Controller::class, 'findById'])
+Route::get('users/{id}', [UserController::class, 'findById'])
     ->middleware(['auth:api']);
 
