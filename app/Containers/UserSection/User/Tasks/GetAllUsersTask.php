@@ -20,6 +20,6 @@ class GetAllUsersTask extends ParentTask
      */
     public function run(): mixed
     {
-        return $this->repository->addRequestCriteria()->paginate();
+        return $this->repository->all();
     }
 }

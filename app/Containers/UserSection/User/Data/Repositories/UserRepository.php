@@ -15,4 +15,8 @@ class UserRepository extends ParentRepository
     protected $fieldSearchable = [
         // 'id' => '=',
     ];
+    public function model(): string
+    {
+        return User::class;
+    }
 }

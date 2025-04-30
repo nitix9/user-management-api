@@ -16,6 +16,8 @@ class UserTransformer extends ParentTransformer
         return [
             'object' => $user->getResourceKey(),
             'id' => $user->getHashedKey(),
+            'name'=>$user->name,
+            'email'=>$user->email,
             'created_at' => $user->created_at,
             'updated_at' => $user->updated_at,
             'readable_created_at' => $user->created_at->diffForHumans(),

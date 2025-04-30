@@ -25,6 +25,5 @@
 use App\Containers\UserSection\User\UI\API\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('users', [UserController::class, 'list'])
-    ->middleware(['auth:api']);
+Route::get('users', [UserController::class, 'list']);
 

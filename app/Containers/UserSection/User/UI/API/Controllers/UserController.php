@@ -54,11 +54,11 @@ class UserController extends ApiController
      * @throws CoreInternalErrorException
      * @throws RepositoryException
      */
-    public function list(ListUsersRequest $request, GetAllUsersAction $action): array
+    public function list(ListUsersRequest $request, GetAllUsersAction $action): JsonResponse
     {
       $users = $action->run($request);
 
-      return $this->transform($users, UserTransformer::class);
+      return $this->json($this->transform($users, UserTransformer::class));
     }
 
     /**
