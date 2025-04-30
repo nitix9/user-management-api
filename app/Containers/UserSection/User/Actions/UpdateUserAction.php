@@ -25,7 +25,8 @@ class UpdateUserAction extends ParentAction
     public function run(UpdateUserRequest $request): User
     {
         $data = $request->sanitizeInput([
-            // add your request data here
+            'name'=>$request->name,
+            'email'=>$request->email
         ]);
 
         return $this->updateUserTask->run($data, $request->id);

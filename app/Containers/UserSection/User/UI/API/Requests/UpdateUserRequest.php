@@ -22,7 +22,9 @@ class UpdateUserRequest extends ParentRequest
     public function rules(): array
     {
         return [
-            // 'id' => 'required',
+             'id' => 'required',
+             'name' => 'required|string|max:255|min:2',
+             'email' => 'required|email|unique:users,email|max:255'
         ];
     }
 

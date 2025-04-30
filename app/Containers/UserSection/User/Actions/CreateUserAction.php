@@ -24,7 +24,6 @@ class CreateUserAction extends ParentAction
     public function run(CreateUserRequest $request): User
     {
         $data = $request->sanitizeInput([
-            // add your request data here
             'name'=>$request->name,
             'email'=>$request->email,
             'password'=> $request->password
