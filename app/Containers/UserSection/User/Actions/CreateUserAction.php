@@ -9,6 +9,7 @@ use App\Containers\UserSection\User\UI\API\Requests\CreateUserRequest;
 use App\Ship\Exceptions\CreateResourceFailedException;
 use App\Ship\Parents\Actions\Action as ParentAction;
 
+
 class CreateUserAction extends ParentAction
 {
     public function __construct(
@@ -24,6 +25,9 @@ class CreateUserAction extends ParentAction
     {
         $data = $request->sanitizeInput([
             // add your request data here
+            'name'=>$request->name,
+            'email'=>$request->email,
+            'password'=> $request->password
         ]);
 
         return $this->createUserTask->run($data);

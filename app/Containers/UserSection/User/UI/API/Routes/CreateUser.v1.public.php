@@ -25,6 +25,5 @@
 use App\Containers\UserSection\User\UI\API\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
-Route::post('users', [UserController::class, 'create'])
-    ->middleware(['auth:api']);
+Route::post('users', [UserController::class, 'create']);
 
