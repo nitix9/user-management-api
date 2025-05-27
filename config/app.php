@@ -83,7 +83,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'ru',
 
     /*
     |--------------------------------------------------------------------------
@@ -165,6 +165,7 @@ return [
          * Application Service Providers...
          * NOTE: all service providers must be registered inside their container's main service providers.
          */
+        App\Providers\Filament\AdminPanelProvider::class,
     ])->toArray(),
 
     /*

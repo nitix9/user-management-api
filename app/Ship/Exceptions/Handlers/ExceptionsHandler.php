@@ -94,6 +94,6 @@ class ExceptionsHandler extends CoreExceptionsHandler
             return $this->buildJsonResponse(new CoreAuthenticationException());
         }
 
-        return redirect()->guest(action(LoginPageController::class));
+        return redirect()->guest(route('filament.admin.auth.login'));
     }
 }

@@ -34,7 +34,6 @@
         }
     ],
     "require": {
-        "apiato/core": "^8.15.0",
         "php": "^8.1",
         "ext-curl": "*",
         "ext-gettext": "*",
@@ -43,9 +42,13 @@
         "ext-pdo": "*",
         "ext-sodium": "*",
         "ext-tokenizer": "*",
+        "apiato/core": "^8.15.0",
+        "filament/filament": "3.3",
+        "filament/tables": "3.3",
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.0",
         "laravel/tinker": "^2.8",
+        "spatie/laravel-permission": "^6.18",
         "webmozart/assert": "^1.11",
         "wikimedia/composer-merge-plugin": "^2.1"
     },
@@ -80,7 +83,8 @@
     "scripts": {
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan filament:upgrade"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
