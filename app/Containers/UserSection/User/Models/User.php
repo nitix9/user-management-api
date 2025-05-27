@@ -2,6 +2,7 @@
 
 namespace App\Containers\UserSection\User\Models;
 
+use App\Containers\UniversalStoreSection\Address\Models\Address;
 use App\Containers\UniversalStoreSection\Shop\Models\Shop;
 use App\Containers\UserSection\Role\Models\Role;
 use App\Ship\Parents\Models\UserModel as ParentUserModel;
@@ -36,6 +37,10 @@ class User extends ParentUserModel
     public function shops():HasMany
     {
         return $this->hasMany(Shop::class);
+    }
+    public function addresses(): HasMany
+    {
+        return $this->hasMany(Address::class);
     }
 
     public function hasAdminRole(): bool

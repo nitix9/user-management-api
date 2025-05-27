@@ -48,7 +48,9 @@ class ShopResource extends Resource
                     ->maxLength(255)
                     ->label('Уникальная ссылка'),
                 Forms\Components\Select::make('user_id')
-                    ->relationship("user", "email")
+                    ->relationship('user', 'email', fn ($query) =>
+                    $query->whereHas('role', fn ($q) => $q->where('name', 'Продавец'))
+                    )
                     ->required()
                     ->label('Владелец'),
                 Forms\Components\TextInput::make('description')
@@ -64,13 +66,16 @@ class ShopResource extends Resource
             ->columns([
                 //
                 Tables\Columns\TextColumn::make('name')
-                     ->label('Наименование'),
+                    ->label('Наименование'),
                 Tables\Columns\TextColumn::make('description')
-                     ->label('Описание'),
+                    ->label('Описание'),
                 Tables\Columns\TextColumn::make('custom_domain')
                     ->label('Уникальная ссылка'),
                 Tables\Columns\TextColumn::make('user.email')
-                    ->label('Владелец'),
+                    ->label('Владелец')
+                    ->url(fn($record):string => route('filament.admin.resources.users.edit', ['record' => $record->user->id])),
+                Tables\Columns\ToggleColumn::make('is_approved')
+                    ->label('Одобрен'),
             ])
             ->filters([
                 //
