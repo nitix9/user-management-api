@@ -3,8 +3,8 @@
 namespace App\Containers\UserSection\User\Models;
 
 use App\Containers\UniversalStoreSection\Shop\Models\Shop;
+use App\Containers\UserSection\Role\Models\Role;
 use App\Ship\Parents\Models\UserModel as ParentUserModel;
-use Couchbase\Role;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Hash;
